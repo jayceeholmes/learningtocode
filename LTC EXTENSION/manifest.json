@@ -1,0 +1,51 @@
+{
+  "name": "LTC Communication Test",
+  "description": "Testing Background to Content Communication",
+  "version": "1.0",
+  "manifest_version": 2,
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "content_scripts": [{
+    "matches": [ "<all_urls>" ],
+    "js": [ "content.js" ]
+  }],
+
+  "permissions": [
+    "tabs"
+  ],
+
+  "commands": {
+    "background-change": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Right",
+        "mac": "MacCtrl+Shift+Right"
+      },
+      "description": "Change Background Color"
+    },
+    "font-change": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Space",
+        "mac": "MacCtrl+Shift+Space"
+      },
+      "description": "Change Font Color and Family"
+    },
+    "div-change": {
+      "suggested_key": {
+        "default": "Ctrl+Space",
+        "mac": "MacCtrl+Space"
+      },
+      "description": "Change Div Color"
+    },
+    "video-change": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Left",
+        "mac": "MacCtrl+Shift+Left"
+      },
+      "description": "Change Video URL"
+    }
+  }
+}
